@@ -1,0 +1,50 @@
+================================================================================
+Title: SN 2018hna: 1987A-like supernova with a signature of shock breakout
+Authors: Singh A., Sahu D.K., Anupama G.C., Kumar B., Kumar H., Yamanaka M.,
+    Baklanov P.V., Tominaga N., Blinnikov S.I., Maeda K., Dutta A., 
+    Bhalerao V., Anche R.M., Barway S., Akitaya H., Nakaoka T., Kawabata M., 
+    Kawabata K.S., Sasada M., Takagi K., Maehara H., Isogai K., Kino M., 
+    Taguchi K., Nagao T.
+Table: Data behind Figure 1 -- Photometric observations of SN 2018hna
+================================================================================
+Byte-by-byte Description of file: Phot.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units Label   Explanations
+--------------------------------------------------------------------------------
+   1- 10 F10.2  d       JD      Julian Day
+  12- 17 F6.2   d       Phase   Days since explosion - JD 2458411.3
+  19- 22 A4     ---     FILTER  Name of the Filter used
+  24- 28 F5.2   mag     Mag     Magnitude, Vega System
+  30- 33 F4.2   mag   e_Mag     1-sigma err
+  35- 46 A12    ---     Tel     Observing telescope
+  48- 53 A6     ---     Instr   Instrument used
+-------------------------------------------------------------------------------- 
+2458423.40  12.10 R    15.72 0.02 2m HCT       HFOSC  
+2458423.40  12.10 V    16.11 0.02 2m HCT       HFOSC  
+2458423.40  12.10 U    18.12 0.12 2m HCT       HFOSC  
+2458423.40  12.10 I    15.58 0.03 2m HCT       HFOSC  
+2458423.40  12.10 B    17.03 0.04 2m HCT       HFOSC  
+  
+2458426.40  15.10 U    18.36 0.18 2m HCT       HFOSC  
+2458426.40  15.10 B    17.07 0.05 2m HCT       HFOSC  
+2458426.40  15.10 I    15.42 0.04 2m HCT       HFOSC  
+2458426.40  15.10 R    15.62 0.02 2m HCT       HFOSC  
+2458426.40  15.10 V    16.01 0.02 2m HCT       HFOSC  
+ 
+2458431.40  20.10 U    18.16 0.08 2m HCT       HFOSC  
+2458431.40  20.10 R    15.44 0.03 2m HCT       HFOSC  
+2458431.40  20.10 V    15.84 0.02 2m HCT       HFOSC  
+2458431.40  20.10 I    15.16 0.04 2m HCT       HFOSC  
+2458431.40  20.10 B    16.96 0.03 2m HCT       HFOSC  
+
+2458447.50  36.20 B    16.27 0.04 2m HCT       HFOSC  
+2458447.50  36.20 V    15.22 0.02 2m HCT       HFOSC  
+2458447.50  36.20 U    17.43 0.09 2m HCT       HFOSC  
+2458447.50  36.20 I    14.57 0.02 2m HCT       HFOSC  
+2458447.50  36.20 R    14.82 0.02 2m HCT       HFOSC  
+
+2458457.40  46.10 B    15.86 0.02 2m HCT       HFOSC  
+2458457.40  46.10 V    14.82 0.03 2m HCT       HFOSC  
+2458457.40  46.10 I    14.27 0.04 2m HCT       HFOSC  
+2458457.40  46.10 R    14.53 0.03 2m HCT       HFOSC  
+2458457.40  46.10 U    17.10 0.08 2m HCT       HFOSC 
