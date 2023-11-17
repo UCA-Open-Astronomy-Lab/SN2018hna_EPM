@@ -2,12 +2,6 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-#B- 4380 angstroms
-#V- 
-
-
-
-
 #Data from SN 2018hna
 #Variables
 z = 0.00241 #red shift
@@ -32,8 +26,6 @@ for i in range(len(t)):
     synthMag[i] = -44.766+6.793*((10**4)/(temp[i]))-4.523*((10**4/temp[i])**2)+2.695*((10**4/temp[i])**3)-0.809*((10**4/temp[i])**4)+0.096*((10**4/temp[i])**5)
     theta[i] = 10**(-math.log(dilution_factor[i],10)-0.2*(ma[i] - synthMag[i])+0.5*math.log(1+z))
 
-
-
 #Graph
 # x axis values
 res = []
@@ -44,7 +36,6 @@ x = res
 
 # corresponding y axis values
 y = t #days
-
   
 # plotting the points
 plt.scatter(x, y, c ="blue")
