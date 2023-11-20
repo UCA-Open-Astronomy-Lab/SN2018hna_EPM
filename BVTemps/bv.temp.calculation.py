@@ -2,7 +2,13 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-import kandcforbv.mymodule as KC
+#KC = __import__(kandcforbv.py)
+
+#import_module(kandcforbv.py)
+
+#import "BVTemps/kandcforbv.py" as KC
+
+
 #10000K/T = K(B-V)+C
 
 T = [0,0,0,0,0]
@@ -16,3 +22,5 @@ C = KC.C#0.48#constant based on color filters
 for i in range(len(T)):
     T[i] = round(10000/( K * ((B[i] - A_B) - (V[i] - A_V)) + C ),2)
 print(T)
+
+#BVTemps/kandcforbv.py
