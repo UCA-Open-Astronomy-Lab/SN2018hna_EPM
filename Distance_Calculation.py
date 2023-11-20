@@ -2,6 +2,9 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
+#importinng files for calcualating tempuratures
+
+
 #Data from SN 2018hna
 #Variables
 z = 0.00241 #red shift
@@ -12,10 +15,17 @@ t = [2458423.4, 2458426.4, 2458431.4, 2458447.5, 2458457.4] #julian days
 
 theta = [1,1,1,1,1]#Mag theta
 
-temp = [0, 0, 0, 0, 0] #in kelvin
+BVtemp = [5222.91, 4682.0, 4483.02, 4716.89, 4752.31]
+temp = [] #in kelvin
+for i in range(len(t)):
+    temp.append(BVtemp[i])
+#print(temp)
 
-#Test variables for magnitude no flux
-ma = [16.08,16.0,15.81,15.19,14.79]#pretty sure I was given these by Dr. Lusk at some point
+#variables for magnitude no flux
+Bmag = [17.03, 17.07, 16.96, 16.27, 15.86]
+mag = [] #in kelvin
+for i in range(len(t)):
+    mag.append(Bmag[i])
 
 dilution_factor = [1,1,1,1,1]
 synthMag = [1,1,1,1,1]
@@ -24,7 +34,7 @@ synthMag = [1,1,1,1,1]
 for i in range(len(t)):
     dilution_factor[i] = 0.5356+0.2116*((10**4)/(temp[i]))-0.0384*((10**4/temp[i])**2)
     synthMag[i] = -44.766+6.793*((10**4)/(temp[i]))-4.523*((10**4/temp[i])**2)+2.695*((10**4/temp[i])**3)-0.809*((10**4/temp[i])**4)+0.096*((10**4/temp[i])**5)
-    theta[i] = 10**(-math.log(dilution_factor[i],10)-0.2*(ma[i] - synthMag[i])+0.5*math.log(1+z))
+    theta[i] = 10**(-math.log(dilution_factor[i],10)-0.2*(mag[i] - synthMag[i])+0.5*math.log(1+z))
 
 #Graph
 # x axis values
