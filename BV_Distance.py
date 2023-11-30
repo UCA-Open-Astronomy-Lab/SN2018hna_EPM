@@ -53,7 +53,7 @@ plt.scatter(x, y, c ="blue")
 a, b = np.polyfit(x, y, 1)
 mx = [i * a for i in x]
 
-print("Distance B: "+str(round(a,2))+" Mpc")
+print("Distance B: "+str(round(a/3.086E13/1000000,2))+" Mpc")
 
 theta = [0,0,0,0,0]#Mag theta
 synthMag = [0,0,0,0,0]
@@ -86,8 +86,14 @@ plt.scatter(x, y, c ="blue")
 a, b = np.polyfit(x, y, 1)
 mx = [i * a for i in x]
 
-print("Distance V: "+str(round(a,2))+" Mpc")
+print("Distance V: "+str(round(a/3.086E13/1000000,2))+" Mpc")
 print()
 print()
 print()
 print()
+'''
+Theta [1.5675543099353888e-11, 1.876424067978239e-11, 2.551673504074408e-11, 2.6631418711607668e-11, 3.5944806230376156e-11]
+synthMag [-38.48031613880113, -38.1448931591048, -37.635236346356706, -38.198343463511264, -37.92890401146166]
+dilution_factor [0.7832812418116969, 0.7923077858782333, 0.8041390953231753, 0.7909345640997862, 0.7976026738787283]
+Distance: 13.23
+'''

@@ -70,7 +70,7 @@ for i in range(len(t)):
 # x axis values
 res = []
 for i in range(len(v)):
-    res.append((theta[i])/ ((v[i]*24*60*60)))
+    res.append((theta[i])/ ((v[i]*(24*60*60))))
 
 x = res
 
@@ -92,7 +92,7 @@ plt.text(0, 0, 'y = ' + '{:0.2e}'.format(b) + ' + ' + '{:0.2e}'.format(a) + 'x',
 #print("y = "+str(round(a/3.086E13/1000000,2))+"x + (" + str(round(b,2)) + ")")
 
 print('t\N{SUBSCRIPT ZERO} = ' + str(round(b,2)) + ' days')
-print("Distance : "+str(round(a,2))+" Mpc")
+print("Distance : "+str(round(a/3.086E13/1000000,2))+" Mpc")
 
 # naming the x axis
 plt.xlabel(r"$\dot{\Theta}$/v")
@@ -104,4 +104,4 @@ plt.ylabel('t(days)')
 plt.title(r"$\dot{\Theta}$/v"+' of SN 2018hna over time')
   
 # function to show the plot
-#plt.show()
+plt.show()
