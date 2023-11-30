@@ -22,25 +22,26 @@ for i in range(len(t)):
     temp.append(Var.BVtemp[i])
 
 #variables for magnitude no flux
-Vmag = [16.11, 16.01, 15.84, 15.22, 14.82]
 mag = [] #in kelvin
 for i in range(len(t)):
     mag.append(Var.Bmag[i])
 
 
 
-#Calculations
-for w in range(len(t)):
-    sum = 0
-    for z in range(6):
-        sum += Var.Vconst[z]*(((10**4)/(temp[i]))**(z))
-    synthMag[w] = sum
-    dilution_factor[w] = 0.5356+0.2116*((10**4)/(temp[w]))-0.0384*((10**4/temp[w])**2)
 
-    
+#Calculations
 for i in range(len(t)):
-    #dilution_factor[i] = 0.5356+0.2116*((10**4)/(temp[i]))-0.0384*((10**4/temp[i])**2)
-    #synthMag[i] = -44.766+6.793*((10**4)/(temp[i]))-4.523*((10**4/temp[i])**2)+2.695*((10**4/temp[i])**3)-0.809*((10**4/temp[i])**4)+0.096*((10**4/temp[i])**5)
+    for x in range(6):
+        synthMag[i] += Var.Bconst[x]*(((10**4)/(temp[i]))**(x))
+    for x in range(3):
+        dilution_factor[i] += Var.BVdilution[x]*(((10**4)/(temp[i]))**(x))
+
+
+    #theta[i] = 10**(-math.log(dilution_factor[i],10)-0.2*(mag[i] - synthMag[i])+0.5*math.log(1+z))
+print(dilution_factor)
+
+
+for i in range(len(t)):
     theta[i] = 10**(-math.log(dilution_factor[i],10)-0.2*(mag[i] - synthMag[i])+0.5*math.log(1+z))
 
 
@@ -88,9 +89,10 @@ plt.plot(x, mx+b)
 
 #add fitted regression equation to plot
 plt.text(0, 0, 'y = ' + '{:0.2e}'.format(b) + ' + ' + '{:0.2e}'.format(a) + 'x', size=5)
-print("y = "+str(round(a/3.086E13/1000000,2))+"x + (" + str(round(b,2)) + ")")
+#print("y = "+str(round(a/3.086E13/1000000,2))+"x + (" + str(round(b,2)) + ")")
 
 print('t\N{SUBSCRIPT ZERO} = ' + str(round(b,2)) + ' days')
+print("Distance : "+str(round(a,2))+" Mpc")
 
 # naming the x axis
 plt.xlabel(r"$\dot{\Theta}$/v")

@@ -28,3 +28,17 @@ tjulian = [2458423.4, 2458426.4, 2458431.4, 2458447.5, 2458457.4]#days since exp
 
 z = 0.00241 #red shift for the supernova
 
+'''Dilution Factor Constants'''
+BVdilution = [0.7557, -0.8997, 0.5199]
+BVIdilution = [0.7336, -0.6942, 0.3740]
+
+
+
+'''
+Unused Equations
+    #synthMag[i] = -44.766+6.793*((10**4)/(temp[i]))-4.523*((10**4/temp[i])**2)+2.695*((10**4/temp[i])**3)-0.809*((10**4/temp[i])**4)+0.096*((10**4/temp[i])**5)
+    #dilution_factor[i] = 0.5356+0.2116*((10**4)/(temp[i]))-0.0384*((10**4/temp[i])**2)
+
+
+
+'''
