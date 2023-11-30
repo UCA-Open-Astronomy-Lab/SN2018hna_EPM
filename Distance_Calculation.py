@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #importinng files for calcualating tempuratures
-
+import EPMvariables as Var
 
 #Data from SN 2018hna
 #Variables
@@ -13,28 +13,57 @@ v = [6485, 5355, 4713, 3861, 3566] #in km per sec
 #t = [12.1, 15.1, 20.1, 37.2, 46.1] # days
 t = [2458423.4, 2458426.4, 2458431.4, 2458447.5, 2458457.4] #julian days
 
-theta = [1,1,1,1,1]#Mag theta
+theta = [0,0,0,0,0]#Mag theta
+dilution_factor = [0,0,0,0,0]
+synthMag = [0,0,0,0,0]
 
-BVtemp = [5222.91, 4682.0, 4483.02, 4716.89, 4752.31]
 temp = [] #in kelvin
 for i in range(len(t)):
-    temp.append(BVtemp[i])
-#print(temp)
+    temp.append(Var.BVtemp[i])
 
 #variables for magnitude no flux
-Bmag = [17.03, 17.07, 16.96, 16.27, 15.86]
+Vmag = [16.11, 16.01, 15.84, 15.22, 14.82]
 mag = [] #in kelvin
 for i in range(len(t)):
-    mag.append(Bmag[i])
+    mag.append(Var.Bmag[i])
 
-dilution_factor = [1,1,1,1,1]
-synthMag = [1,1,1,1,1]
+
 
 #Calculations
+for w in range(len(t)):
+    sum = 0
+    for z in range(6):
+        sum += Var.Vconst[z]*(((10**4)/(temp[i]))**(z))
+    synthMag[w] = sum
+    dilution_factor[w] = 0.5356+0.2116*((10**4)/(temp[w]))-0.0384*((10**4/temp[w])**2)
+
+    
 for i in range(len(t)):
-    dilution_factor[i] = 0.5356+0.2116*((10**4)/(temp[i]))-0.0384*((10**4/temp[i])**2)
-    synthMag[i] = -44.766+6.793*((10**4)/(temp[i]))-4.523*((10**4/temp[i])**2)+2.695*((10**4/temp[i])**3)-0.809*((10**4/temp[i])**4)+0.096*((10**4/temp[i])**5)
+    #dilution_factor[i] = 0.5356+0.2116*((10**4)/(temp[i]))-0.0384*((10**4/temp[i])**2)
+    #synthMag[i] = -44.766+6.793*((10**4)/(temp[i]))-4.523*((10**4/temp[i])**2)+2.695*((10**4/temp[i])**3)-0.809*((10**4/temp[i])**4)+0.096*((10**4/temp[i])**5)
     theta[i] = 10**(-math.log(dilution_factor[i],10)-0.2*(mag[i] - synthMag[i])+0.5*math.log(1+z))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Graph
 # x axis values
@@ -73,4 +102,4 @@ plt.ylabel('t(days)')
 plt.title(r"$\dot{\Theta}$/v"+' of SN 2018hna over time')
   
 # function to show the plot
-plt.show()
+#plt.show()
