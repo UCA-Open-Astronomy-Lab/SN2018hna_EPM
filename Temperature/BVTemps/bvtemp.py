@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-import BVTemps.kandcforbv as KC
+import kandcforbv as KC
 
 '''
 10000K/T = K(B-V)+C 

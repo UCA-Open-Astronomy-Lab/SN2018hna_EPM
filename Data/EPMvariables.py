@@ -1,10 +1,8 @@
-import BVTemps.bvtemp as BV
+import Temperature.BVTemps.bvtemp as BV
 
 '''Time in days from files supplied by the user'''
 tdays = [12.1, 15.1, 20.1, 37.2, 46.1]#days since explosion in regular days
 tjulian = [2458423.4, 2458426.4, 2458431.4, 2458447.5, 2458457.4]#days since explosion in julian days
-
-
 
 '''Tempurature values using different methods'''
 BVtemp = []
