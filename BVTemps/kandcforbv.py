@@ -29,9 +29,11 @@ plt.plot(x, mx+b)
 
 #add fitted regression equation to plot
 plt.text(0, 0, 'y = ' + '{:0.2e}'.format(a) + 'x + ' + '{:0.2e}'.format(b), size=5)
-print("10000K/T = "+str(a)+"x + " + str(b))
+#print("10000K/T = "+str(a)+"x + " + str(b))
 
 #print('t\N{SUBSCRIPT ZERO} = ' + str(round(b,2)) + ' days')
+K = a
+C = 0.48
 
 # naming the x axis
 plt.xlabel('B-V')
@@ -43,10 +45,7 @@ plt.ylabel('10000K/T')
 plt.title('B-V Tempurature Fit From Data provided by Cietti et al.')
   
 # function to show the plot
-plt.show()
-
-K = a
-C = b
+#plt.show()
 
 '''
 The values above are values used to equate color filters to a tempurature using the equation 10,000Kel/T = K(B-V)+C.

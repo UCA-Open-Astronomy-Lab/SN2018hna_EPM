@@ -1,7 +1,15 @@
+import BVTemps.bvtemp as BV
+
+'''Time in days from files supplied by the user'''
+tdays = [12.1, 15.1, 20.1, 37.2, 46.1]#days since explosion in regular days
+tjulian = [2458423.4, 2458426.4, 2458431.4, 2458447.5, 2458457.4]#days since explosion in julian days
+
 
 
 '''Tempurature values using different methods'''
-BVtemp = [5222.91, 4682.0, 4483.02, 4716.89, 4752.31]#tempuratrue derived from the B-V color tempurature
+BVtemp = []
+for i in range(len(tdays)):
+    BVtemp.append(BV.T[i])
 
 '''Velocities derived using a method chosen by the user'''
 v = [6485, 5355, 4713, 3861, 3566]#velocity in km/s
@@ -19,12 +27,6 @@ Bconst = [-45.144, 7.159, -4.301, 2.639, -0.811, 0.098]#constants for the B magn
 Vconst = [-44.766, 6.793, -4.523, 2.695, -0.809, 0.096]#constants for the V magnitudes
 Rconst = [-44.597, 6.628, -4.693, 2.770, -0.831, 0.099]#constants for the R magnitudes
 Iconst = [-44.345, 6.347, -4.732, 2.739, -0.811, 0.096]#constants for the I magnitudes
-
-
-'''Time in days from files supplied by the user'''
-tdays = [12.1, 15.1, 20.1, 37.2, 46.1]#days since explosion in regular days
-tjulian = [2458423.4, 2458426.4, 2458431.4, 2458447.5, 2458457.4]#days since explosion in julian days
-
 
 z = 0.00241 #red shift for the supernova
 

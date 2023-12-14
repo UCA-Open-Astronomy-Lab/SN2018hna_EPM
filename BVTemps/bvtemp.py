@@ -20,5 +20,4 @@ C = KC.C #0.48#constant based on color filters
 
 for i in range(len(T)):
     T[i] = round(10000/( K * ((B[i] - A_B) - (V[i] - A_V)) + C ),2)
-print(T)
 
