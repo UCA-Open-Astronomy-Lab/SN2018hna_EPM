@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #importinng files for calcualating tempuratures
-import Data.EPMvariables as Var
+import Main.Templates.EPMvariables as Var
 
 #Data from SN 2018hna
 #Variables
