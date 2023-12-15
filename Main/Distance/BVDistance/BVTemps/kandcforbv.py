@@ -2,8 +2,8 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-T = [np.Infinity, 25000, 20000, 12000, 8000, 6000, 5000, 4000, 3300] #temp from MatthewsSandage1963
-BV = [-0.44, -0.21, -0.15, 0.05, 0.35, 0.63, 0.79, 1.13, 1.44]#B-V for the temps listed above from MatthewsSandage1963
+T = [np.Infinity, 25000, 20000, 12000, 8000, 6000, 5000, 4000, 3300, 3000] #temp from MatthewsSandage1963
+BV = [-0.44, -0.21, -0.15, 0.05, 0.35, 0.63, 0.79, 1.13, 1.44, 1.67]#B-V for the temps listed above from MatthewsSandage1963
 K = 0
 C = 0
 
